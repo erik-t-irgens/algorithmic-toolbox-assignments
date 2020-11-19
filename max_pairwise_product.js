@@ -20,6 +20,20 @@ function readLine(line) {
 function max(arr) {
     // When receiving an array, decide which two numbers - when paired - would provide the greatest product of any paired number. 
 
+    let max1 = 0;
+    let max2;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= max1) {
+            max2 = max1
+            max1 = arr[i]
+        } else if (arr[i] > max2) {
+            max2 = arr[i]
+        }
+    }
+
+    return max1 * max2
+
 }
 
 module.exports = max;
